@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .45s ease;
+}
+body{
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 56, 56);
+}
+.title{
+    margin-bottom: 40px;
+}
+h1{
+    font-size: 60px;
+    color: white;
+    font-weight: 300;
+}
+.one{
+    color: rgb(255, 0, 200);
+}
+.two{
+    color: rgb(0, 200, 255);
+}
+.content{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.game{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+}
+.game div{
+    border: 1px solid rgb(255, 0, 200);
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.line{
+    position: absolute;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden;
+    border: none;
+    z-index: 100;
+}
+
+.topXLine{
+    top: 50px;
+    left: 0;
+    height: 2px !important;
+}
+.middleXLine{
+    left: 0;
+    top: 150px;
+    height: 2px !important;
+}
+.bottomXLine{
+    top: 250px;
+    left: 0;
+    height: 2px !important;
+}
+.leftYLine{
+    top: 0;
+    left: 50px;
+    width: 2px !important;
+}
+.middleYLine{
+    top: 0;
+    left: 150px;
+    width: 2px !important;
+}
+.rightYLine{
+    top: 0;
+    left: 250px;
+    width: 2px !important ;
+}
+.leftZLine{
+    transform: rotate(-45deg);
+    top: -60px;
+    left: 150px;
+    width: 2px !important;
+}
+.rightZLine{
+    transform: rotate(45deg);
+    left: 150px;
+    top: -60px;
+    width: 2px !important;
+}
