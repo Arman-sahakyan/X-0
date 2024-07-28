@@ -19,13 +19,23 @@ const rightYLine = document.querySelector('.rightYLine')
 const leftZLine = document.querySelector('.leftZLine')
 const rightZLine = document.querySelector('.rightZLine')
 
+const restartBtn = document.querySelector('.restart')
+const winner = document.querySelector('h3')
+
 const boxArray = document.querySelector('.game')
+
 
 let color = 'rgb(255, 0, 200)'
 
 let value = 'x'
 
 let result = false
+
+restartBtn.addEventListener('click',()=>{
+    clear()
+    winner.innerHTML = ''
+    restartBtn.style.cssText=`visibility: hidden; opacity: 0;`
+})
 
 function handleClick(e){
     if ((!e.target.innerHTML.length||e.target.innerHTML === ' ') && !victory()){
@@ -37,28 +47,8 @@ function handleClick(e){
         }
         e.target.style.color = color
         if (victory()){
-            setTimeout(()=> {
-                alert(result?'nichya':value + ' win')
-                top_left.innerHTML = ' '
-                top_middle.innerHTML = ''
-                top_right.innerHTML = ''
-                middle_left.innerHTML = ''
-                middle_right.innerHTML = ' '
-                middle_middle.innerHTML = ' '
-                bottom_left.innerHTML = ''
-                bottom_middle.innerHTML = ' '
-                bottom_right.innerHTML = ''
-
-                middleXLine.style.cssText=`width: 0 !important;  visibility: hidden;`
-                topXLine.style.cssText=`width: 0 !important; visibility: hidden;`
-                bottomXLine.style.cssText=`width: 0 !important; visibility: hidden;`
-                leftYLine.style.cssText=`height: 0 !important; visibility: hidden;`
-                middleYLine.style.cssText=`height: 0 !important; visibility: hidden;`
-                rightYLine.style.cssText=`height: 0 !important; visibility: hidden;`
-                leftZLine.style.cssText=`height: 0 !important; visibility: hidden;`
-                rightZLine.style.cssText=`height: 0 !important; visibility: hidden;`
-            },2000)
-            
+            winner.innerHTML = result?'Game draw':value + ' win'
+            restartBtn.style.cssText=`visibility: visible; opacity: 1;`
         }else{
             value = value==='x'?'0':'x'
         }
@@ -104,4 +94,24 @@ function victory(){
     }
     console.log(result);
     return result
+}
+function clear(){
+    top_left.innerHTML = ' '
+    top_middle.innerHTML = ''
+    top_right.innerHTML = ''
+    middle_left.innerHTML = ''
+    middle_right.innerHTML = ' '
+    middle_middle.innerHTML = ' '
+    bottom_left.innerHTML = ''
+    bottom_middle.innerHTML = ' '
+    bottom_right.innerHTML = ''
+
+    middleXLine.style.cssText=`width: 0 !important;  visibility: hidden;`
+    topXLine.style.cssText=`width: 0 !important; visibility: hidden;`
+    bottomXLine.style.cssText=`width: 0 !important; visibility: hidden;`
+    leftYLine.style.cssText=`height: 0 !important; visibility: hidden;`
+    middleYLine.style.cssText=`height: 0 !important; visibility: hidden;`
+    rightYLine.style.cssText=`height: 0 !important; visibility: hidden;`
+    leftZLine.style.cssText=`height: 0 !important; visibility: hidden;`
+    rightZLine.style.cssText=`height: 0 !important; visibility: hidden;`
 }

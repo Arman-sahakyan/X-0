@@ -20,11 +20,17 @@ body{
 }
 .title{
     margin-bottom: 40px;
+    min-height: 120px;
+    text-align: center;
 }
 h1{
     font-size: 60px;
     color: white;
     font-weight: 300;
+}
+h3{
+    color: white;
+    font-size: 30px;
 }
 .one{
     color: rgb(255, 0, 200);
@@ -102,4 +108,21 @@ h1{
     left: 150px;
     top: -60px;
     width: 2px !important;
+}
+.bottom{
+    margin-top: 40px;
+}
+.restart{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 0, 200);
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 30px;
+    opacity: 0;
+    visibility: hidden;
+}
+.restart:hover{
+    background-color: rgb(0, 200, 255);
 }
